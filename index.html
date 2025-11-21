@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* ... (resto del CSS body, container, right-section, etc. es el mismo) ... */
         * {
             margin: 0;
             padding: 0;
@@ -21,44 +20,25 @@
             background-image: linear-gradient(135deg, #f0f6ff 0%, #e8f0ff 100%);
             min-height: 100vh;
             display: flex;
+            flex-direction: column; /* Cambiamos a columna para centrar el bloque principal */
             justify-content: center;
             align-items: center;
             padding: 20px;
         }
 
-        .container {
+        /* NUEVO ESTILO: Contenedor principal que mantiene el formulario y la imagen */
+        #main-content {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 1200px;
+            flex-direction: column; /* Apila el formulario y la imagen */
+            align-items: center; /* Centra horizontalmente */
+            max-width: 600px; /* Ancho máximo para el contenido centrado */
             width: 100%;
-            min-height: 800px;
+            margin: auto; /* Centra el contenido en el viewport */
         }
 
-        .left-section {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-            padding-right: 50px;
-        }
-
-        /* AJUSTE CLAVE: Estilos para el contenedor de la imagen */
-        .illustration-container {
-            width: 450px; 
-            height: 450px;
-        }
-        
-        /* AJUSTE CLAVE: Estilos para la imagen real */
-        .illustration-img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Asegura que la imagen se ajuste sin distorsionarse */
-            opacity: 0.9;
-        }
-        
+        /* Estilo de la tarjeta de inicio de sesión (el foco central) */
         .right-section {
-            max-width: 450px;
+            max-width: 450px; /* Mantenemos el ancho para la tarjeta */
             width: 100%;
             background: white;
             border-radius: 24px;
@@ -67,8 +47,25 @@
             flex-direction: column;
             position: relative;
             overflow: hidden;
-            margin-left: 50px;
+            margin-bottom: 40px; /* Espacio debajo del formulario */
         }
+        
+        /* ESTILO: Imagen de fondo debajo del formulario */
+        .illustration-container {
+            width: 100%;
+            max-width: 500px; /* Mismo ancho que el formulario para alineación */
+            height: auto;
+            margin-top: -20px; /* Opcional: para que parezca que la imagen "emana" del formulario */
+        }
+        
+        .illustration-img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            opacity: 0.9;
+        }
+
+        /* --- Estilos restantes (header-card, logo-icon, etc.) sin cambios --- */
 
         .header-card {
             background: linear-gradient(135deg, #FF6B47 0%, #F85A3E 100%);
@@ -235,12 +232,11 @@
 
         @media (max-width: 968px) {
             .container {
-                flex-direction: column;
-                min-height: auto;
+                /* Eliminamos el container antiguo */
             }
 
             .left-section {
-                display: none;
+                display: none; /* Se oculta el left-section antiguo */
             }
 
             .right-section {
@@ -383,13 +379,8 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="left-section">
-            <div class="illustration-container">
-                <img src="./assets/fondohelios.png" class="illustration-img">
-            </div>
-        </div>
-
+    
+    <div id="main-content">
         <div class="right-section">
             <div class="header-card">
                 <div class="logo-icon"></div>
@@ -414,6 +405,10 @@
                     Sign in with Google
                 </button>
             </div>
+        </div>
+
+        <div class="illustration-container">
+            <img src="./assets/fondohelios.png" alt="Fondo decorativo Helios" class="illustration-img">
         </div>
     </div>
     
