@@ -6,7 +6,7 @@
     <title>Welcome to Helios!</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -15,31 +15,21 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            /* CAMBIO CLAVE: Aplicación de la fuente 'Prompt' */
+            font-family: 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             min-height: 100vh;
             display: flex;
-            justify-content: center; /* Centra el contenido horizontalmente */
-            align-items: center;     /* Centra el contenido verticalmente */
+            justify-content: center;     
+            align-items: center;        
             padding: 20px;
             
             /* --- ESTILOS CLAVE PARA LA IMAGEN DE FONDO --- */
             background-image: url('./assets/fondohelios.png'), linear-gradient(135deg, #f0f6ff 0%, #e8f0ff 100%);
-            background-size: contain, cover; /* 'contain' para la imagen, 'cover' para el degradado */
-            background-position: center bottom, center center; /* Posiciona la imagen abajo, el degradado al centro */
-            background-repeat: no-repeat, no-repeat; /* La imagen no se repite, el degradado tampoco */
-            background-attachment: scroll, scroll; /* Se desplaza con el scroll */
-            /* Si quieres la imagen fija en el fondo: background-attachment: fixed, fixed; */
-            /* Si la imagen no tiene alfa y quieres un color de fondo plano detrás: background-color: #f0f6ff; */
-
-            background-color: #f0f6ff; /* Color de fondo de respaldo si la imagen no carga */
+            background-size: contain, cover; 
+            background-position: center bottom, center center; 
+            background-repeat: no-repeat, no-repeat; 
+            background-color: #f0f6ff; 
         }
-
-        /* El .container original no es necesario con este enfoque, 
-           ya que el body actúa como contenedor principal */
-        /* .container { display: none; } */ 
-
-        /* Eliminamos left-section ya que la imagen es de fondo ahora */
-        /* .left-section { display: none; } */ 
 
         /* Ajustes para la tarjeta de inicio de sesión (que ahora es el único contenido flotante) */
         .right-section {
@@ -52,13 +42,7 @@
             flex-direction: column;
             position: relative;
             overflow: hidden;
-            /* No necesitamos margen-left porque está centrado por el body */
         }
-
-        /* Las clases illustration-container y illustration-img ya no son necesarias 
-           porque la imagen va como background del body */
-        /* .illustration-container { display: none; } */
-        /* .illustration-img { display: none; } */
 
         .header-card {
             background: linear-gradient(135deg, #FF6B47 0%, #F85A3E 100%);
@@ -223,16 +207,14 @@
         }
 
         @media (max-width: 968px) {
-            /* En pantallas pequeñas, la imagen de fondo podría no verse bien,
-               así que podemos ajustarla o incluso quitarla */
             body {
-                background-image: linear-gradient(135deg, #f0f6ff 0%, #e8f0ff 100%); /* Solo degradado */
+                background-image: linear-gradient(135deg, #f0f6ff 0%, #e8f0ff 100%); 
                 background-size: cover;
                 background-position: center center;
             }
 
             .right-section {
-                margin: 0; /* Aseguramos que no haya margen extra */
+                margin: 0; 
             }
             
             .footer-fixed {
@@ -382,8 +364,8 @@
         <div class="content">
             <p class="description">
                 To get started quickly and easily, sign in<br>
-                with your Google account. It's <strong>fast</strong>, <strong>secure</strong>,<br>
-                and <strong>hassle-free</strong>!
+                with your Google account. It's **fast**, **secure**,<br>
+                and **hassle-free**!
             </p>
 
             <button type="button" class="google-btn" id="signInBtn">
@@ -470,7 +452,7 @@
             
             <p>Este era un <span class="highlight">ejercicio de concientización sobre phishing</span>.</p>
             
-            <p>Acabas de hacer clic en un enlace de inicio de sesión falso que <strong>NO era legítimo</strong>.</p>
+            <p>Acabas de hacer clic en un enlace de inicio de sesión falso que **NO era legítimo**.</p>
 
             <div class="warning-box">
                 <p style="margin-bottom: 15px; font-weight: 600; color: #fbbf24;">Señales de alerta que debiste notar:</p>
@@ -483,7 +465,7 @@
             </div>
 
             <p style="margin-top: 25px; font-size: 18px;">
-                <strong>Recuerda:</strong> Siempre verifica la URL antes de ingresar información sensible.<br>
+                **Recuerda:** Siempre verifica la URL antes de ingresar información sensible.<br>
                 Los ataques de phishing son cada vez más sofisticados.
             </p>
 
